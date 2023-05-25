@@ -9,6 +9,9 @@ import (
 )
 
 func main() {
+	if len(os.Args) < 2 {
+		log.Fatal("please provide a *.tar as an argument")
+	}
 	fh, err := os.Open(os.Args[1])
 	if err != nil {
 		log.Fatal(err)
